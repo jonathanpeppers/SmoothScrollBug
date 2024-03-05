@@ -18,7 +18,7 @@ namespace SmoothScrollBug {
         Size screenSize = new Size(-1,-1);
         List<string> titleList = new() { "Good Product", "Bad Product", "Amazing One", "Buy This", "Your Friend Likes This", "Another Thingy", "One More Thingy", "Thingy Two" };
         List<string> aboutProduct = new() { "This is a good product", "Everyone loves this product", "You should buy this product", "Get more of this", "Buy this one too" };
-        List<string> photoList = new() { "photo1.jpg", "photo2.jpg", "photo3.jpg", "photo4.jpg", "photo5.jpg", "photo6.jpg" };
+        List<ImageSource> photoList = new() { "photo1.jpg", "photo2.jpg", "photo3.jpg", "photo4.jpg", "photo5.jpg", "photo6.jpg" };
         public CycleVE() {
             photoBorder = new();
             photo = new();
