@@ -61,24 +61,24 @@ namespace SmoothScrollBug {
                 photo.WidthRequest = photoSize;
 
                 this.WidthRequest = screenSize.Width;
-                this.HeightRequest = new Random().Next(40) + 80;
+                this.HeightRequest = Random.Shared.Next(40) + 80;
 
                 priceLabel.TranslationX = screenSize.Width *0.75;
                 bodyLabel.TranslationX = photoSize + 10;
                 titleLabel.TranslationX = photoSize + 10;
-                bodyLabel.TranslationY = 20 + new Random().Next(5);
+                bodyLabel.TranslationY = 20 + Random.Shared.Next(5);
             }
             
         }
         public void updateData() {
-            priceLabel.Text = "$" + new Random().Next(10000);
-            bodyLabel.Text = aboutProduct[new Random().Next(aboutProduct.Count())];
-            titleLabel.Text = titleList[new Random().Next(titleList.Count())];
+            priceLabel.Text = "$" + Random.Shared.Next(10000);
+            bodyLabel.Text = aboutProduct[Random.Shared.Next(aboutProduct.Count())];
+            titleLabel.Text = titleList[Random.Shared.Next(titleList.Count())];
 
-            photo.Source = photoList[new Random().Next(photoList.Count())];
+            photo.Source = photoList[Random.Shared.Next(photoList.Count())];
             configurePositions();
 
-            Debug.WriteLine("UPDATED DATA " + new Random().Next(10000));
+            Debug.WriteLine("UPDATED DATA " + Random.Shared.Next(10000));
         }
     }
 }
