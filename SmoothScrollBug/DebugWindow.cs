@@ -5,6 +5,7 @@ using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Linq;
+using System.Diagnostics;
 
 namespace SmoothScrollBug {
     public class DebugLabel {
@@ -18,6 +19,7 @@ namespace SmoothScrollBug {
         }
 
     }
+
     public class DebugWindow : AbsoluteLayout {
         //===================
         //MAKE LAZY SINGLETON
@@ -31,6 +33,7 @@ namespace SmoothScrollBug {
         int numLabels = 8;
         int currentIndex = 0;
         Size screenSize = new Size(-1, -1);
+
         private DebugWindow() {
             for (int i = 0; i < numLabels; i++) {
                 DebugLabel label = new DebugLabel(this);
@@ -39,6 +42,8 @@ namespace SmoothScrollBug {
             clearLabels();
 
         }
+
+        [Conditional("DEBUG")]
         public void clearLabels() {
             for (int i = 0; i < labels.Count; i++) {
                 labels[i].label.Text = "";
@@ -47,6 +52,8 @@ namespace SmoothScrollBug {
                 labels[i].label.BackgroundColor = Colors.Yellow;
             }
         }
+
+        [Conditional("DEBUG")]
         public void addMessage(string msg) {
 
             //need oldest at top (descending)

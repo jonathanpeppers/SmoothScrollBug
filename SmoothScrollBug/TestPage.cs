@@ -24,7 +24,9 @@ namespace SmoothScrollBug {
             abs = new();
             rootDummy.Add(abs);
 
+#if !DEBUG
             rootDummy.Add(DebugWindow.Instance);
+#endif
 
             var timer =Application.Current.Dispatcher.CreateTimer();
             timer.Interval = TimeSpan.FromSeconds(1 / 120f);
